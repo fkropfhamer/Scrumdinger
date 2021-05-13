@@ -11,12 +11,17 @@ struct Attendee: Identifiable {
     let id: UUID
     var surname: String
     var firstname: String
+    var fullName: String {
+        "\(firstname) \(surname)"
+    }
     
     init(id: UUID = UUID(), firstname: String = "", surname: String = "") {
         self.id = id
         self.firstname = firstname
         self.surname = surname
     }
+    
+   
     
     public func getFullName() -> String {
         return "\(self.firstname) \(self.surname)"
